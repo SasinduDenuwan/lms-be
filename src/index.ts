@@ -56,7 +56,7 @@ app.use(
 );
 
 // Handle preflight requests explicitly (helps on some hosting platforms)
-// app.options('*', cors());
+app.options('*', cors());
 
 // ── ROUTES ───────────────────────────────────────────────────────────
 app.use('/api/v1/auth', authRouter);
@@ -105,3 +105,5 @@ mongoose
     console.error('MongoDB connection error:', err);
     process.exit(1);
   });
+
+export default app;
